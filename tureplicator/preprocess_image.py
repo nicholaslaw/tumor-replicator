@@ -11,13 +11,6 @@ def fill_holes(img):
     
     return img | im_inv
 
-def get_boundary(img, reps=5):
-    inner = img.copy()
-    for _ in range(reps):
-        inner = erosion(inner)
-
-    return img - inner
-
 def filter_coords(tumor_mid_coords, spawn_coords, tol=0.6):
     """
     PARAMS
